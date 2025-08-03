@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(20, 14.3%, 4.1%);
+  --muted: hsl(60, 4.8%, 95.9%);
+  --muted-foreground: hsl(25, 5.3%, 44.7%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(20, 14.3%, 4.1%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(20, 14.3%, 4.1%);
+  --border: hsl(20, 5.9%, 90%);
+  --input: hsl(20, 5.9%, 90%);
+  --primary: hsl(207, 90%, 54%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(60, 4.8%, 95.9%);
+  --secondary-foreground: hsl(24, 9.8%, 10%);
+  --accent: hsl(60, 4.8%, 95.9%);
+  --accent-foreground: hsl(24, 9.8%, 10%);
+  --destructive: hsl(0, 84.2%, 60.2%);
+  --destructive-foreground: hsl(60, 9.1%, 97.8%);
+  --ring: hsl(20, 14.3%, 4.1%);
+  --radius: 0.5rem;
+  
+  /* Coquette theme colors */
+  --coquette-blue: hsl(216, 100%, 70%);
+  --coquette-light: hsl(216, 100%, 85%);
+  --coquette-pink: hsl(336, 100%, 85%);
+  --coquette-bg: hsl(220, 100%, 98%);
+  --coquette-error: hsl(350, 100%, 70%);
+  --coquette-success: hsl(135, 100%, 75%);
+  --coquette-neutral: hsl(220, 50%, 95%);
+}
+
+.dark {
+  --background: hsl(240, 10%, 3.9%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(240, 3.7%, 15.9%);
+  --muted-foreground: hsl(240, 5%, 64.9%);
+  --popover: hsl(240, 10%, 3.9%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(240, 10%, 3.9%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 3.7%, 15.9%);
+  --input: hsl(240, 3.7%, 15.9%);
+  --primary: hsl(207, 90%, 54%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(240, 3.7%, 15.9%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(240, 3.7%, 15.9%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(240, 4.9%, 83.9%);
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply antialiased bg-background text-foreground;
+    font-family: 'Poppins', sans-serif;
+  }
+}
+
+@layer components {
+  .checkered-bg {
+    background-image: 
+      linear-gradient(45deg, hsl(216, 100%, 85%) 25%, transparent 25%), 
+      linear-gradient(-45deg, hsl(216, 100%, 85%) 25%, transparent 25%), 
+      linear-gradient(45deg, transparent 75%, hsl(216, 100%, 85%) 75%), 
+      linear-gradient(-45deg, transparent 75%, hsl(216, 100%, 85%) 75%);
+    background-size: 80px 80px;
+    background-position: 0 0, 0 40px, 40px -40px, -40px 0px;
+    background-color: white;
+  }
+  
+  .error-bg {
+    background-image: 
+      linear-gradient(45deg, hsl(0, 84%, 55%) 25%, transparent 25%), 
+      linear-gradient(-45deg, hsl(0, 84%, 55%) 25%, transparent 25%), 
+      linear-gradient(45deg, transparent 75%, hsl(0, 84%, 55%) 75%), 
+      linear-gradient(-45deg, transparent 75%, hsl(0, 84%, 55%) 75%);
+    background-size: 80px 80px;
+    background-position: 0 0, 0 40px, 40px -40px, -40px 0px;
+    background-color: white;
+  }
+  
+  .emoji-hover {
+    transition: all 0.3s ease;
+  }
+  
+  .emoji-hover:hover {
+    transform: scale(1.1) translateY(-5px);
+    box-shadow: 0 10px 25px hsla(var(--coquette-blue), 0.3);
+  }
+  
+  .envelope-flap {
+    transform-origin: bottom center;
+    transition: transform 1s ease-out;
+  }
+  
+  .envelope-open .envelope-flap {
+    transform: rotateX(-180deg);
+  }
+  
+  .candle-flame {
+    background: radial-gradient(circle, #FFD700 0%, hsl(var(--coquette-error)) 70%);
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    animation: flicker 1s ease-in-out infinite alternate;
+  }
+  
+  .candle-blown .candle-flame {
+    opacity: 0;
+    transform: scale(0);
+    transition: all 0.5s ease-out;
+  }
+  
+  .sparkle-effect {
+    pointer-events: none;
+  }
+  
+  .sparkle-effect::before,
+  .sparkle-effect::after {
+    content: '✨';
+    position: absolute;
+    font-size: 20px;
+    animation: sparkle 2s ease-in-out infinite;
+    opacity: 0;
+  }
+  
+  .sparkle-effect::before {
+    top: 20%;
+    left: 10%;
+    animation-delay: 0s;
+  }
+  
+  .sparkle-effect::after {
+    top: 60%;
+    right: 15%;
+    animation-delay: 1s;
+  }
+  
+  .sparkle-effect-2::before,
+  .sparkle-effect-2::after {
+    content: '💫';
+    position: absolute;
+    font-size: 16px;
+    animation: sparkle 2.5s ease-in-out infinite;
+    opacity: 0;
+  }
+  
+  .sparkle-effect-2::before {
+    top: 10%;
+    right: 20%;
+    animation-delay: 0.5s;
+  }
+  
+  .sparkle-effect-2::after {
+    bottom: 20%;
+    left: 20%;
+    animation-delay: 1.5s;
+  }
+  
+  .sparkle-effect-3::before,
+  .sparkle-effect-3::after {
+    content: '⭐';
+    position: absolute;
+    font-size: 14px;
+    animation: sparkle 3s ease-in-out infinite;
+    opacity: 0;
+  }
+  
+  .sparkle-effect-3::before {
+    top: 5%;
+    left: 50%;
+    animation-delay: 0.8s;
+  }
+  
+  .sparkle-effect-3::after {
+    bottom: 10%;
+    right: 5%;
+    animation-delay: 2s;
+  }
+}
+
+@layer utilities {
+  @keyframes flicker {
+    0% { transform: scale(1) rotate(-1deg); }
+    100% { transform: scale(1.1) rotate(1deg); }
+  }
+  
+  @keyframes confetti-fall {
+    0% { 
+      transform: translateY(-100vh) rotate(0deg); 
+      opacity: 1; 
+    }
+    100% { 
+      transform: translateY(100vh) rotate(720deg); 
+      opacity: 0; 
+    }
+  }
+  
+  @keyframes sparkle {
+    0%, 100% { 
+      opacity: 0; 
+      transform: scale(0) rotate(0deg); 
+    }
+    50% { 
+      opacity: 1; 
+      transform: scale(1) rotate(180deg); 
+    }
+  }
+  
+  .confetti-piece {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    animation: confetti-fall 3s ease-out infinite;
+  }
+}
