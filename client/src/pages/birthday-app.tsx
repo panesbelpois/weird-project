@@ -266,15 +266,15 @@ export default function BirthdayApp() {
                   
                   <div className="text-left text-gray-700 leading-relaxed mb-6 sm:mb-8 text-sm sm:text-base">
                     <p className="mb-3 sm:mb-4">
-                      Wowwwww halo cikal, as usual apa kabarr? Semoga kabarmu baik ya, sehat2 deh. Kmu tau kan hari ini hari apa 🤔 yuppyuppp selamat ulang tahun ke 20 tahun kall, udah kepala 2 ya ternyata, sudah panjang juga perjalanan hidup kamu tapi perjalanan selanjutnya juga masih panjangggg banget, dan di setiap jalan itu aku harap smoga kmu diiringin ama orang2 yang baik, bahagia terus, dan makin banyak hal2 baik terjadi di hidupmu.
+                      Wowwwww hai cikal, as usual apa kabarr? Apkh kmu tau ini hariapa?! 🤔 yuppyuppp selamat ulang tahun ke 20 tahun kall, udah kepala 2 ya ternyata, sudah panjang juga perjalanan hidup kamu tapi perjalanan selanjutnya juga masih panjangggg banget dan di setiap jalan itu aku harap smoga kmu diiringin ama orang2 yang baik ya #anjay
                     </p>
                     
                     <p className="mb-3 sm:mb-4">
-                      Harapannya apa ya? Wkwkwk, kita ga sedeket itusi jadi gatau kamu pengen apa, tapi semoga hari-hari mu makin membaik, apapun itu yang terjadi di perkuliahan juga makin meningkat baik itu akademik maupun non akademik, doa terbaik juga untuk keluargamu dan orang-orang yang penting buat kamu. Pokoknya i just wish you all the best and happiness.
+                      Harapannya apa ya? Wkwkwk, kita ga sedeket itusi jadi gatau, tapi semoga hari-hari mu berjalan baik, apapun itu yang terjadi di perkuliahan juga makin meningkat, doa terbaik juga untuk keluargamu dan orang-orang yang penting buat kamu. Pokoknya i just wish you all the best and happiness.
                     </p>
                     
                     <p>
-                      Sekali lagi selamat ulang tahun ke-20 cikalll. Aku juga gatau kenapa buat ini heheh tapi iseng saja banh. Semoga yang kamu semogakan tersemogakan, happy birthday! :3
+                      Jujur gw gajago membuat hal2 kaya gini soalnya iseng. Tapi semoga yang kamu semogakan tersemogakan! once again happy birthday! :3
                     </p>
                   </div>
                   
